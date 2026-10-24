@@ -1,0 +1,463 @@
+﻿/* Quiet specimen-paper palette. Organism materials retain their amber / teal identity. */
+html[data-theme="light"] {
+  color: #2b4038;
+  background: #f0f1e9;
+  --muted: #6a7b70;
+  --lime: #45684d;
+  --copper: #a87a45;
+  --line: #8da38c33;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] .app {
+  background: #f0f1e9;
+  color: #2b4038;
+}
+html[data-theme="light"] header {
+  background: #f5f5edeb;
+  border-color: #b8c5b24d;
+}
+html[data-theme="light"] .brand > span:not(.brand-symbol):not(.brand-dot) {
+  color: #70816f;
+}
+html[data-theme="light"] .brand-symbol {
+  color: #a17b48;
+}
+html[data-theme="light"] .brand-dot {
+  background: #a17b48;
+}
+html[data-theme="light"] nav button {
+  color: #72806e;
+}
+html[data-theme="light"] nav button.active {
+  color: #2f4939;
+}
+html[data-theme="light"] nav button.active:after {
+  background: #8d7149;
+}
+html[data-theme="light"] .header-right,
+html[data-theme="light"] .header-right .icon-button {
+  color: #6d7f6b;
+}
+html[data-theme="light"] .home main,
+html[data-theme="light"] .inside main {
+  background:
+    radial-gradient(ellipse at 75% 45%, #dde6d5 0%, transparent 60%), #f0f1e9;
+}
+html[data-theme="light"] .home .scene-shade {
+  background:
+    linear-gradient(
+      90deg,
+      #f0f1e9 0%,
+      #f0f1e9e6 23%,
+      #f0f1e969 41%,
+      transparent 64%
+    ),
+    linear-gradient(0deg, #f0f1e9, transparent 24%);
+}
+html[data-theme="light"] .inside .scene-shade {
+  background:
+    linear-gradient(90deg, #f0f1e9dd, #f0f1e963 24%, transparent 60%),
+    linear-gradient(0deg, #f0f1e9, transparent 28%);
+}
+html[data-theme="light"] .ambient-aura {
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+}
+html[data-theme="light"] .viewport-corners span {
+  border-color: #7d947e44;
+}
+html[data-theme="light"] .hero-copy h1 {
+  color: #304538;
+}
+html[data-theme="light"] .hero-copy h1 em {
+  color: #8d8e68;
+}
+html[data-theme="light"] .hero-copy > p,
+html[data-theme="light"] .hero-copy > .text-link,
+html[data-theme="light"] .hero-copy .eyebrow {
+  color: #6b7d68;
+}
+html[data-theme="light"] .hero-copy .eyebrow > span {
+  background: #a18b60;
+  box-shadow: none;
+}
+html[data-theme="light"] .primary {
+  background: #3c5c45;
+  color: #f5f6ed;
+  box-shadow: none;
+}
+html[data-theme="light"] .primary:hover {
+  background: #54744e;
+  color: #fff;
+}
+html[data-theme="light"] .secondary {
+  background: #f5f6ed77;
+  border-color: #96a88b66;
+  color: #40563c;
+}
+html[data-theme="light"] .secondary svg {
+  color: #708369;
+}
+html[data-theme="light"] .secondary:hover {
+  background: #e0e7d7;
+  color: #39532f;
+}
+html[data-theme="light"] .hero-meta,
+html[data-theme="light"] .bottom-note,
+html[data-theme="light"] .discover {
+  color: #6e7e66;
+}
+html[data-theme="light"] .hero-meta i {
+  background: #9c9b72;
+}
+html[data-theme="light"] .hero-copy .text-link {
+  color: #64785a;
+}
+html[data-theme="light"] .home .specimen-label {
+  color: #506447;
+}
+html[data-theme="light"] .home .specimen-label small {
+  color: #7c8b70;
+}
+html[data-theme="light"] .label-number {
+  color: #9b7a44;
+  border-color: #9f9f7b77;
+}
+html[data-theme="light"] .label-line {
+  background: linear-gradient(90deg, transparent, #8c9b76);
+}
+html[data-theme="light"] .specimen-coordinate,
+html[data-theme="light"] .specimen-coordinate small {
+  color: #7b8a6d;
+}
+html[data-theme="light"] .specimen-coordinate strong {
+  color: #7a8964;
+}
+html[data-theme="light"] .specimen-coordinate > span {
+  color: #8b957e;
+}
+html[data-theme="light"] .home-scene-tools {
+  background: #f5f7e9dd;
+  border-color: #aabc9c66;
+  box-shadow: none;
+}
+html[data-theme="light"] .home-scene-tools button,
+html[data-theme="light"] .home-scene-tools span {
+  color: #687e5a;
+}
+html[data-theme="light"] .scene-caption,
+html[data-theme="light"] .intro-control {
+  color: #7b8c69;
+}
+html[data-theme="light"] .home-bottom {
+  border-color: #acb99c55;
+}
+html[data-theme="light"] .index,
+html[data-theme="light"] .discover span {
+  color: #9c804e;
+}
+html[data-theme="light"] .bottom-note span,
+html[data-theme="light"] .home-bottom:after {
+  color: #849474;
+}
+html[data-theme="light"] footer {
+  background: #e9eddf;
+  border-color: #b5c3a74d;
+}
+html[data-theme="light"] .footer-left,
+html[data-theme="light"] .preferences label,
+html[data-theme="light"] .preferences .icon-button {
+  color: #6f8061;
+}
+html[data-theme="light"] .footer-mark {
+  color: #9c8053;
+}
+html[data-theme="light"] .preferences select,
+html[data-theme="light"] select,
+html[data-theme="light"] .lab-panel select,
+html[data-theme="light"] .speed-label select {
+  background: #f6f8eb;
+  border-color: #aebe9c77;
+  color: #516747;
+}
+html[data-theme="light"] .workspace-heading h1 {
+  color: #344a37;
+}
+html[data-theme="light"] .workspace-heading .eyebrow,
+html[data-theme="light"] .chapter-badge {
+  color: #7e8c70;
+}
+html[data-theme="light"] .learning-panel,
+html[data-theme="light"] .compare-panel,
+html[data-theme="light"] .knowledge-grid > section,
+html[data-theme="light"] .inspection,
+html[data-theme="light"] .hunt-prompt {
+  background: #f7f8efed;
+  border-color: #b0c19f66;
+  box-shadow: 0 12px 45px #5265430a;
+  backdrop-filter: blur(14px);
+}
+html[data-theme="light"] .learning-panel h2,
+html[data-theme="light"] .learning-panel h3,
+html[data-theme="light"] .knowledge-grid h2,
+html[data-theme="light"] .knowledge-grid h3,
+html[data-theme="light"] .compare-columns h2 {
+  color: #3b5137;
+}
+html[data-theme="light"] .learning-panel p,
+html[data-theme="light"] .learning-panel .summary,
+html[data-theme="light"] .knowledge-grid p,
+html[data-theme="light"] .inspection p {
+  color: #718266;
+}
+html[data-theme="light"] .panel-kicker,
+html[data-theme="light"] .learning-panel label,
+html[data-theme="light"] .lab-panel label {
+  color: #819073;
+}
+html[data-theme="light"] .panel-kicker > span {
+  color: #a48a5b;
+}
+html[data-theme="light"] .learning-panel .text-link,
+html[data-theme="light"] .text-link {
+  color: #687e58;
+}
+html[data-theme="light"] .path-switch {
+  background: #e6ecd9;
+  border-color: #b4c4a366;
+}
+html[data-theme="light"] .path-switch button {
+  color: #74856a;
+}
+html[data-theme="light"] .path-switch button.active,
+html[data-theme="light"] .path-switch button.chosen {
+  background: #f8faef;
+  color: #425b37;
+}
+html[data-theme="light"] .key-concept,
+html[data-theme="light"] .concept-box {
+  background: #e8eddd;
+  border-color: #b5c3a2;
+  color: #687c59;
+}
+html[data-theme="light"] .key-concept strong {
+  color: #536b45;
+}
+html[data-theme="light"] .viewport-tools {
+  background: #f5f8e9e8;
+  border-color: #b0c29d77;
+}
+html[data-theme="light"] .viewport-tools button {
+  color: #738966;
+}
+html[data-theme="light"] .viewport-tools button.chosen {
+  background: #e0e9d3;
+  color: #405c32;
+}
+html[data-theme="light"] .timeline-panel {
+  background: #f3f6e8ed;
+  border-color: #b1c39e66;
+  box-shadow: 0 15px 50px #52643b0a;
+}
+html[data-theme="light"] .timeline-topline {
+  color: #7a8e6b;
+}
+html[data-theme="light"] .timeline-topline button {
+  color: #546e43;
+}
+html[data-theme="light"] .live-dot {
+  background: #91a374;
+  box-shadow: none;
+}
+html[data-theme="light"] .stage-track button {
+  color: #8d9a7e;
+}
+html[data-theme="light"] .stage-track button > span {
+  color: #91a07d;
+  border-color: #a7ba8f66;
+  background: #eef2e3;
+}
+html[data-theme="light"] .stage-track button.current {
+  color: #425e32;
+}
+html[data-theme="light"] .stage-track button.current > span {
+  color: #f8faef;
+  background: #688451;
+  border-color: #688451;
+}
+html[data-theme="light"] .stage-track button.completed {
+  color: #70895b;
+}
+html[data-theme="light"] .stage-track:before {
+  background: #bac9a5;
+}
+html[data-theme="light"] .timeline-panel input[type="range"] {
+  accent-color: #7a915e;
+  background: #d5dfc3;
+}
+html[data-theme="light"] .play-button {
+  background: #7b9561;
+  color: #f9fbef;
+  box-shadow: none;
+}
+html[data-theme="light"] .play-button:hover {
+  background: #91a978;
+  color: #fff;
+}
+html[data-theme="light"] .playback .icon-button,
+html[data-theme="light"] .time-readout,
+html[data-theme="light"] .time-readout span,
+html[data-theme="light"] .speed-label,
+html[data-theme="light"] .progress-label {
+  color: #71855e;
+}
+html[data-theme="light"] .world-label {
+  color: #526a42;
+  background: #f4f8e7e8;
+  border-color: #a9bc9277;
+}
+html[data-theme="light"] .world-label.warm {
+  color: #8a764c;
+  border-color: #b8ab8266;
+}
+html[data-theme="light"] .world-label > span {
+  background: #7b9362;
+}
+html[data-theme="light"] .inspection h3 {
+  color: #8f7c4b;
+}
+html[data-theme="light"] .inspection small,
+html[data-theme="light"] .inspection .eyebrow {
+  color: #84936e;
+}
+html[data-theme="light"] .structure-list button,
+html[data-theme="light"] .component-pills button {
+  background: #f1f5e5;
+  color: #6d8057;
+  border-color: #b8c9a066;
+}
+html[data-theme="light"] .component-pills .chosen,
+html[data-theme="light"] .structure-list .chosen {
+  background: #dce7c9;
+  color: #445e30;
+}
+html[data-theme="light"] .organism-key {
+  color: #7c8d68;
+}
+html[data-theme="light"] .anatomy-panel small,
+html[data-theme="light"] .anatomy-panel .lab-gesture {
+  color: #849470;
+}
+html[data-theme="light"] .anatomy-panel details {
+  border-color: #b9c8a344;
+}
+html[data-theme="light"] .compare-columns section {
+  background: #f4f7e9;
+  border-color: #c2cda966;
+}
+html[data-theme="light"] .compare-columns .selected-path {
+  background: #eaf0dd;
+  border-color: #8fa872;
+}
+html[data-theme="light"] .path-title {
+  color: #9b8050;
+}
+html[data-theme="light"] .compare-columns dt {
+  color: #5f784b;
+}
+html[data-theme="light"] .compare-columns dd,
+html[data-theme="light"] .compare-top {
+  color: #83956e;
+}
+html[data-theme="light"] .answer {
+  color: #6e8458;
+  border-color: #afc19666;
+}
+html[data-theme="light"] .answer.chosen {
+  color: #6b6536 !important;
+  background: #e9ead2 !important;
+  border-color: #a7a479 !important;
+}
+html[data-theme="light"] .feedback {
+  color: #667f4c !important;
+  border-color: #95a879;
+}
+html[data-theme="light"] .score {
+  color: #8b8051;
+}
+html[data-theme="light"] .question-count,
+html[data-theme="light"] .order-row {
+  color: #809367;
+}
+html[data-theme="light"] .order-row {
+  border-color: #b6c69e55;
+}
+html[data-theme="light"] .order-row > span {
+  color: #a28b55;
+}
+html[data-theme="light"] .question-modal {
+  background: #f1f5e5;
+  border-color: #b5c69e66;
+  box-shadow: 0 30px 100px #34412722;
+  color: #536a42;
+}
+html[data-theme="light"] .question-modal h2 {
+  color: #4d653a;
+}
+html[data-theme="light"] .question-modal .eyebrow {
+  color: #8f8d5c;
+}
+html[data-theme="light"] .modal-shade {
+  background: #79866b70;
+  backdrop-filter: blur(12px);
+}
+html[data-theme="light"] .shortcut-modal dt {
+  color: #597444;
+}
+html[data-theme="light"] .shortcut-modal dd {
+  color: #829568;
+}
+html[data-theme="light"] .shortcut-modal kbd {
+  background: #e5edd5;
+  border-color: #b7c99a;
+}
+html[data-theme="light"] .compact-playback {
+  background: #edf3df;
+  border-color: #acc39466;
+  color: #6b8453;
+}
+html[data-theme="light"] .compact-playback button {
+  background: #dce8c8;
+  color: #4c6934;
+}
+html[data-theme="light"] .webgl-error,
+html[data-theme="light"] .webgl-error strong,
+html[data-theme="light"] .loading {
+  color: #7c9061;
+}
+html[data-theme="light"] .world-label button {
+  color: inherit;
+}
+@media (max-width: 700px) {
+  html[data-theme="light"] .home main {
+    background:
+      radial-gradient(ellipse at 65% 28%, #dce5d3, transparent 65%), #f0f1e9;
+  }
+  html[data-theme="light"] .home .scene-shade {
+    background: linear-gradient(
+      0deg,
+      #f0f1e9 10%,
+      #f0f1e9aa 35%,
+      transparent 67%
+    );
+  }
+  html[data-theme="light"] .inside .scene-shade {
+    background: linear-gradient(180deg, transparent 30%, #f0f1e9 56%);
+  }
+  html[data-theme="light"] header {
+    background: #f5f6ec;
+  }
+  html[data-theme="light"] .home-bottom {
+    background: transparent;
+  }
+}

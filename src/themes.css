@@ -1,0 +1,284 @@
+﻿.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 11px;
+  border: 1px solid #8eab9555;
+  border-radius: 20px;
+  min-height: 34px;
+  font:
+    10px "DM Sans",
+    sans-serif;
+  letter-spacing: 0.2px;
+  background: #8ba5980a;
+  color: inherit;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  background: #8ba59822;
+  color: inherit;
+}
+.header-right {
+  gap: 15px;
+}
+.game-learning-mode {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  margin-left: auto;
+  margin-right: 18px;
+  order: 1;
+}
+.games-topbar .sound-toggle {
+  order: 2;
+}
+.games-topbar > .back-to-hub,
+.games-topbar > .game-eyebrow {
+  order: 0;
+}
+.game-title-line {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+.game-title-line > span {
+  font:
+    24px Georgia,
+    serif;
+  letter-spacing: 2px;
+}
+.game-title-line p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.mission-strip h2 small {
+  display: block;
+  font:
+    12px "DM Sans",
+    sans-serif;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.molecular-label {
+  white-space: nowrap;
+  font: 9px monospace;
+  color: light-dark(#795e8b, #ccb1d8);
+  background: light-dark(#f8f7e9df, #132b2de8);
+  border: 1px solid #9d91a577;
+  padding: 7px;
+  border-radius: 5px;
+}
+.molecular-hint {
+  display: block;
+  white-space: nowrap;
+  font: 9px monospace;
+  color: light-dark(#7f6991, #c5accf);
+  background: light-dark(#f9faeadd, #12272dd9);
+  padding: 10px;
+  border-radius: 6px;
+  pointer-events: none;
+}
+.molecular-hint small {
+  display: block;
+  font:
+    9px "DM Sans",
+    sans-serif;
+  margin-top: 5px;
+}
+.molecular-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  border: 1px solid #9caf8d44;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 12px;
+  font-size: 11px;
+  background: light-dark(#edf0e4, #142b2d);
+}
+.molecular-controls strong {
+  font-size: 11px;
+}
+.molecular-controls label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+  min-width: 140px;
+  font-size: 10px;
+}
+.molecular-controls input {
+  accent-color: #a27eb0;
+  min-width: 65px;
+  width: 100%;
+}
+.interaction-task {
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 13px;
+  margin: 15px 0;
+  border-left: 2px solid #a687ad;
+  background: light-dark(#eee9f0, #332b38);
+  color: light-dark(#6e507c, #ceb6dc);
+}
+.route-badge {
+  font: 10px monospace;
+  letter-spacing: 0.5px;
+  padding: 9px;
+  border: 1px solid #a6b49c55;
+  border-radius: 5px;
+}
+.contact-rejected {
+  white-space: nowrap;
+  background: light-dark(#efe4d6, #3e3327);
+  color: light-dark(#8b6545, #d6b48a);
+  padding: 7px;
+  border-radius: 4px;
+  font: 9px monospace;
+}
+.population-counters {
+  grid-template-columns: repeat(7, 1fr);
+}
+.population-command label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+}
+.ecosystem-log {
+  background: light-dark(#f6f8ec, #10272a);
+  border: 1px solid #9caf8d44;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px;
+}
+.ecosystem-log h3 {
+  font-size: 15px;
+  font-weight: 450;
+}
+.ecosystem-log > p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.ecosystem-log ol {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.ecosystem-log li {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  line-height: 1.6;
+  border-top: 1px solid #9caf8d22;
+  padding: 8px 0;
+}
+.ecosystem-log time {
+  font: 10px monospace;
+  color: var(--muted);
+  min-width: 40px;
+}
+.ecosystem-log strong {
+  font-weight: 450;
+  white-space: nowrap;
+  color: var(--muted);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+html[data-theme="light"] {
+  color-scheme: light;
+}
+html[data-theme="dark"] main[data-page="Games"] {
+  background: #09191d !important;
+}
+html[data-theme="dark"] .games-v2 {
+  color: #d9e3d9;
+}
+html[data-theme="dark"] .games-v2 .game-eyebrow {
+  color: #91a895;
+}
+html[data-theme="dark"] .games-hub-heading h1 em {
+  color: #b6b895;
+}
+html[data-theme="dark"] .expedition-cover {
+  border-color: #8aa29144;
+}
+html[data-theme="dark"] .home .hero-copy h1 em {
+  color: #c1b89a;
+}
+html[data-theme="dark"] .app {
+  background: #09191d;
+}
+html[data-theme="dark"] .home main {
+  background:
+    radial-gradient(ellipse at 75% 40%, #243b3538, transparent 55%), #09191d;
+}
+html[data-theme="dark"] .inside main {
+  background:
+    radial-gradient(ellipse at 70% 40%, #253d3638, transparent 55%), #09191d;
+}
+html[data-theme="dark"] header {
+  background: #0b1b1ee8;
+}
+html[data-theme="dark"] .ambient-aura {
+  opacity: 0.045;
+}
+html[data-theme="dark"] .hero-copy h1 {
+  color: #e5e8dc;
+}
+html[data-theme="dark"] .primary {
+  background: #c3b597;
+  color: #182821;
+}
+@media (max-width: 800px) {
+  .header-right {
+    gap: 8px;
+  }
+  .header-right > span {
+    display: none;
+  }
+  .theme-toggle {
+    padding: 8px;
+    font-size: 9px;
+  }
+  .theme-toggle svg {
+    width: 12px;
+  }
+  .game-learning-mode {
+    margin: 0 7px 0 auto;
+    font-size: 9px;
+    gap: 4px;
+  }
+  .game-learning-mode select {
+    padding: 7px;
+    font-size: 10px;
+  }
+  .games-topbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ecosystem-log ol {
+    grid-template-columns: 1fr;
+  }
+  .population-counters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .molecular-controls {
+    gap: 10px;
+  }
+  .molecular-controls label {
+    min-width: 120px;
+  }
+  .mission-strip h2 small {
+    font-size: 11px;
+  }
+}

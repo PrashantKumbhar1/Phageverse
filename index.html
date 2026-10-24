@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f0f1e9" />
+    <meta
+      name="description"
+      content="Explore bacteriophage lambda through an interactive 3D lifecycle, microscopic laboratory, and learning challenges."
+    />
+    <title>PhageVerse — Inside the Invisible</title>
+  </head>
+  <body>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("phageverse-theme") === "dark"
+            ? "dark"
+            : "light";
+      } catch {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
