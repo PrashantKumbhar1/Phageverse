@@ -1,3 +1,4 @@
+import { useMobileLayout } from "../shared/useMobileLayout";
 import { useTheme } from "../../theme";
 import { Component, Suspense, useMemo, useState, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
@@ -277,6 +278,7 @@ export function GameStage({
   orbit?: boolean;
 }) {
   const { theme } = useTheme();
+  const mobile = useMobileLayout();
   const [pixelRatio, PixelRatio] = useState(window.innerWidth < 700 ? 1 : 1.45);
   const backdrop = theme === "light" ? "#e0e7db" : "#0c2024";
   return (
@@ -284,7 +286,7 @@ export function GameStage({
       <Canvas
         dpr={[1, pixelRatio]}
         frameloop={preview ? "demand" : "always"}
-        camera={{ position, fov: 42, near: 0.1, far: 120 }}
+        camera={{ position, fov: mobile ? 56 : 42, near: 0.1, far: 120 }}
         gl={{ antialias: true, powerPreference: "high-performance" }}
         fallback={
           <div className="game-render-error">

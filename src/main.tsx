@@ -6,6 +6,7 @@ import "./styles.css";
 import "./refinement.css";
 import "./scientific.css";
 import "./themes.css";
+import "./mobile.css";
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>

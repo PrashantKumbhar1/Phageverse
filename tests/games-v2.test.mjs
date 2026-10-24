@@ -5,7 +5,12 @@ import ts from "typescript";
 const load = async (name) => {
   const code = ts.transpileModule(
     fs.readFileSync("src/games/core/" + name + ".ts", "utf8"),
-    { compilerOptions: { module: ts.ModuleKind.ESNext } },
+    {
+      compilerOptions: {
+        module: ts.ModuleKind.ESNext,
+        target: ts.ScriptTarget.ES2022,
+      },
+    },
   ).outputText;
   return import(
     "data:text/javascript;base64," + Buffer.from(code).toString("base64")
@@ -182,4 +187,32 @@ test("INTRUDER seeking switches the manipulated molecule to match the stage", ()
   const s = { ...c.initialIntruder("lytic"), replication: true };
   assert.equal(c.seekIntruder(s, 35).cargo, "tail");
   assert.equal(c.seekIntruder({ ...s, cargo: "tail" }, 5).cargo, "genome");
+});
+
+const { TouchControls } = await load("../shared/TouchControls");
+test("mobile multi-touch keeps movement and interaction independent", () => {
+  const input = new TouchControls();
+  input.press(1, "forward", 1);
+  let value = input.press(2, "interact", true);
+  assert.equal(value.forward, 1);
+  assert.equal(value.interact, true);
+  value = input.release(2);
+  assert.equal(value.forward, 1);
+  assert.equal(value.interact, false);
+  value = input.release(1);
+  assert.equal(value.forward, 0);
+});
+test("mobile cancellation, opposing controls and repeated release leave no stuck input", () => {
+  const input = new TouchControls();
+  input.press(1, "turn", 1);
+  assert.equal(input.press(2, "turn", -1).turn, 0);
+  assert.equal(input.release(1).turn, -1);
+  assert.equal(input.release(1).turn, -1);
+  assert.deepEqual(input.clear(), {
+    forward: 0,
+    strafe: 0,
+    turn: 0,
+    interact: false,
+  });
+  assert.equal(input.release(2).turn, 0);
 });

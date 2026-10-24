@@ -1,3 +1,4 @@
+import { TouchControls } from "../shared/TouchControls";
 import GenomeThread from "../render/GenomeThread";
 import { useLearning } from "../shared/LearningMode";
 import { useEffect, useRef, useState } from "react";
@@ -136,6 +137,7 @@ export default function Contact() {
   const { level } = useLearning();
   const keys = useRef(new Set<string>()),
     touch = useRef<ContactInput>({ ...empty }),
+    touchPointers = useRef(new TouchControls()),
     drag = useRef<number | null>(null);
   const active =
     !tutorial && !paused && state.phase !== "won" && state.phase !== "lost";
@@ -162,7 +164,7 @@ export default function Contact() {
       up = (e: KeyboardEvent) => keys.current.delete(e.code),
       clear = () => {
         keys.current.clear();
-        touch.current = { ...empty };
+        touch.current = touchPointers.current.clear();
         setPaused(true);
       };
     window.addEventListener("keydown", down);
@@ -205,17 +207,24 @@ export default function Contact() {
     setState(contactInitial(mission));
     setPaused(false);
     keys.current.clear();
-    touch.current = { ...empty };
+    touch.current = touchPointers.current.clear();
   };
   const hold =
     (axis: keyof ContactInput, value: number | boolean) =>
     (e: React.PointerEvent<HTMLButtonElement>) => {
       e.preventDefault();
       e.currentTarget.setPointerCapture(e.pointerId);
-      touch.current = { ...touch.current, [axis]: value };
+      touch.current = touchPointers.current.press(e.pointerId, axis, value);
     };
-  const release = () => {
-    touch.current = { ...empty };
+  const release = (
+    event:
+      | React.PointerEvent<HTMLButtonElement>
+      | React.KeyboardEvent<HTMLButtonElement>,
+  ) => {
+    touch.current =
+      "pointerId" in event
+        ? touchPointers.current.release(event.pointerId)
+        : touchPointers.current.clear();
   };
   return (
     <div className="contact-experience">
@@ -348,6 +357,7 @@ export default function Contact() {
               onPointerDown={hold(axis as keyof ContactInput, value as number)}
               onPointerUp={release}
               onPointerCancel={release}
+              onLostPointerCapture={release}
               onKeyDown={(e) => {
                 if (e.key === "Enter")
                   touch.current = { ...empty, [axis]: value };
@@ -363,6 +373,7 @@ export default function Contact() {
           onPointerDown={hold("interact", true)}
           onPointerUp={release}
           onPointerCancel={release}
+          onLostPointerCapture={release}
           onKeyDown={(e) => {
             if (e.key === "Enter") touch.current.interact = true;
           }}

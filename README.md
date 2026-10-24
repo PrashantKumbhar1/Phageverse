@@ -81,3 +81,9 @@ The Laboratory offers 11 selectable component views with dissection and behavior
 Automated rules and geometry tests cover CONTACT stability and injection prerequisites; INTRUDER spatial pathway entry, replication and integration gates, assembly and seeking; and AFTERMATH deterministic replays, achievable scenarios, compatibility, counters, and event histories. Run npm test for the current results and npm run build for TypeScript and production output.
 
 The earlier light hub, homepage, Hunter movement camera, and cell cutaway were visually inspected before the latest interaction rebuild. Browser automation for the latest themes and games was stopped because the Windows helper could not determine the current URL confidently enough to enforce policy. Latest rendered gameplay, mobile touch behavior, browser console output, and GPU performance are therefore not claimed as fully verified. Models remain original procedural teaching representations, not imported photorealistic assets.
+
+## Mobile layout
+
+Phone layouts are isolated in `src/mobile.css` at widths up to 760px, plus short touch-screen landscape viewports. Desktop stylesheet rules are retained. Mobile navigation scrolls horizontally; learning panels and playback controls follow the 3D scene in document order. The games use a wider field of view only within the same mobile media query. CONTACT touch pointers are tracked independently so two-finger movement and interaction can coexist.
+
+Validation: 26 automated tests pass, including independent touch release, opposing controls and cancellation. A stylesheet audit confirms all 200 selector blocks in the new stylesheet are scoped to mobile media queries. Production build and preview HTTP checks pass. Real-device appearance and touch behavior still require visual verification; no Windows UI or browser-window settings were changed for this update.

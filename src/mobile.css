@@ -1,0 +1,981 @@
+﻿/* Mobile-only layout. Desktop rules, palettes, and camera behavior stay in their existing stylesheets. */
+@media (max-width: 760px),
+  (max-width: 1024px) and (max-height: 500px) and (pointer: coarse) {
+  .app {
+    min-width: 0;
+  }
+  .app > header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    height: auto;
+    min-height: 0;
+    gap: 8px 10px;
+    padding: max(12px, env(safe-area-inset-top))
+      max(16px, env(safe-area-inset-right)) 0
+      max(16px, env(safe-area-inset-left));
+  }
+  header .brand {
+    grid-row: 1;
+    grid-column: 1;
+    width: fit-content;
+    min-height: 44px;
+    font-size: 14px;
+    letter-spacing: 1.7px;
+  }
+  header .brand > span:not(.brand-symbol):not(.brand-dot) {
+    letter-spacing: 1.5px;
+  }
+  header .brand-symbol {
+    margin-right: 8px;
+  }
+  header .brand-symbol svg {
+    width: 23px;
+  }
+  header .header-right {
+    grid-row: 1;
+    grid-column: 2;
+    gap: 4px;
+    margin: 0;
+  }
+  header .header-right > span {
+    display: none;
+  }
+  header .theme-toggle {
+    min-height: 44px;
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+  header .header-right .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px;
+    border: 0;
+  }
+  header nav {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    scroll-padding-inline: 8px;
+  }
+  header nav button {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  header nav button.active:after {
+    bottom: 3px;
+  }
+  .app button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .app button,
+  .app a,
+  .app summary {
+    touch-action: manipulation;
+  }
+  .app select,
+  .app input:not([type="range"]),
+  .app textarea {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  .app select {
+    min-height: 44px;
+  }
+  .app input[type="range"] {
+    height: 40px;
+    min-width: 0;
+    touch-action: pan-y;
+  }
+  .app input[type="range"]::-webkit-slider-thumb {
+    min-width: 22px;
+    min-height: 22px;
+  }
+  .app input[type="range"]::-moz-range-thumb {
+    min-width: 22px;
+    min-height: 22px;
+  }
+
+  /* Keep the introduction and specimen in separate rows, with no negative-width canvas. */
+  .home main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding-bottom: 20px;
+  }
+  .home .hero-copy {
+    order: 1;
+    width: 100%;
+    padding: 32px 20px 0;
+  }
+  .home .hero-copy .eyebrow {
+    font-size: 9px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+  .home .hero-copy h1 {
+    font-size: clamp(55px, 14vw, 84px);
+    letter-spacing: -3px;
+    margin: 23px 0;
+    line-height: 1.02;
+  }
+  .home .hero-copy h1 em {
+    letter-spacing: -3px;
+  }
+  .home .hero-copy > p {
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 20px 0;
+  }
+  .home .desktop-break {
+    display: none;
+  }
+  .home .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .home .hero-actions button {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 13px;
+    padding: 14px 16px;
+  }
+  .home .hero-copy > .text-link {
+    min-height: 44px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .home .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .home .scene-wrap {
+    position: relative;
+    inset: auto;
+    order: 2;
+    width: 100%;
+    height: clamp(330px, 95vw, 470px);
+    flex: none;
+  }
+  html[data-theme] .home .scene-shade,
+  .home .ambient-aura,
+  .home .viewport-corners {
+    display: none;
+  }
+  .home .specimen-label {
+    position: relative;
+    inset: auto;
+    order: 3;
+    display: flex;
+    gap: 12px;
+    padding: 0 20px;
+    margin: 0 0 16px;
+    max-width: 100%;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .home .specimen-label small {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .home .specimen-label .label-line {
+    display: none;
+  }
+  .home .label-number {
+    flex-shrink: 0;
+  }
+  .home .specimen-coordinate {
+    display: none;
+  }
+  .home .home-scene-tools {
+    position: relative;
+    inset: auto;
+    order: 3;
+    align-self: flex-end;
+    margin: 4px 20px 12px;
+    padding: 2px 8px;
+  }
+  .home .home-scene-tools button {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .home .home-scene-tools span {
+    font-size: 9px;
+  }
+  .home .scene-caption {
+    position: relative;
+    inset: auto;
+    order: 3;
+    padding: 0 20px;
+    margin: 0 0 8px;
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .home .intro-control {
+    position: relative;
+    inset: auto;
+    order: 3;
+    align-self: flex-end;
+    min-height: 44px;
+    margin-right: 20px;
+    font-size: 11px;
+  }
+  .home .home-bottom {
+    position: relative;
+    inset: auto;
+    order: 4;
+    height: auto;
+    min-height: 80px;
+    margin: 10px 20px 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .home .home-bottom:after {
+    display: none;
+  }
+  .home .bottom-note {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .home .discover {
+    min-height: 44px;
+    margin-left: auto;
+    font-size: 9px;
+  }
+
+  /* Normal document flow replaces the fixed mobile offsets on every workspace page. */
+  .inside main:not([data-page="Games"]) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0 !important;
+    padding: 22px 16px 28px;
+  }
+  .inside main:not([data-page="Games"]) .workspace-heading {
+    order: 0;
+    padding: 0;
+  }
+  .inside main:not([data-page="Games"]) .workspace-heading h1 {
+    max-width: 100%;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  .inside main:not([data-page="Games"]) .workspace-heading .eyebrow {
+    font-size: 9px;
+  }
+  .inside main:not([data-page="Games"]) .chapter-badge {
+    position: static;
+    order: 1;
+    font-size: 9px;
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+  .inside main:not([data-page="Games"]) .viewport-tools {
+    position: static;
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 100%;
+    align-self: flex-end;
+    padding: 3px;
+  }
+  .inside main:not([data-page="Games"]) .viewport-tools button {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .inside main:not([data-page="Games"]) .viewport-tools button svg {
+    width: 15px;
+  }
+  .inside main:not([data-page="Games"]) .scene-wrap {
+    position: relative;
+    inset: auto;
+    order: 3;
+    width: 100%;
+    height: clamp(340px, 90vw, 490px);
+    flex: none;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .inside main:not([data-page="Games"]) .scene-shade,
+  .inside main:not([data-page="Games"]) .viewport-corners,
+  .inside main:not([data-page="Games"]) .ambient-aura {
+    display: none;
+  }
+  .inside main:not([data-page="Games"]) .learning-panel,
+  .inside main:not([data-page="Games"]) .anatomy-panel,
+  .inside main:not([data-page="Games"]) .compare-panel {
+    position: relative;
+    order: 4;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  .learning-panel p,
+  .learning-panel .summary,
+  .learning-panel details p,
+  .compare-panel p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .learning-panel .panel-kicker,
+  .learning-panel label,
+  .organism-key {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .learning-panel h2 {
+    font-size: 28px;
+  }
+  .learning-panel h3 {
+    font-size: 15px;
+  }
+  .anatomy-panel .component-pills {
+    gap: 7px;
+  }
+  .anatomy-panel .component-pills button {
+    min-height: 44px;
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+  .anatomy-panel details summary {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  .anatomy-panel .lab-demo-controls {
+    flex-wrap: wrap;
+  }
+  .anatomy-panel .lab-demo-controls button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .anatomy-panel .demo-scrub,
+  .anatomy-panel small,
+  .anatomy-panel .lab-gesture {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .organism-key {
+    flex-wrap: wrap;
+  }
+  .inside main:not([data-page="Games"]) .inspection,
+  .inside main:not([data-page="Games"]) .hunt-prompt {
+    position: relative;
+    inset: auto;
+    order: 5;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  .inspection p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .inside main:not([data-page="Games"]) .timeline-panel,
+  .inside main:not([data-page="Games"]) .compact-playback {
+    position: relative;
+    inset: auto;
+    order: 6;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+  .timeline-topline {
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    font-size: 8px;
+  }
+  .timeline-topline button {
+    min-height: 44px;
+    padding: 8px;
+    font-size: 11px;
+  }
+  .timeline-panel .stage-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding-bottom: 8px;
+  }
+  .timeline-panel .stage-track button,
+  .timeline-panel .stage-track button.current {
+    flex: 0 0 90px;
+    min-height: 65px;
+    font-size: 10px;
+    line-height: 1.45;
+    scroll-snap-align: start;
+  }
+  .stage-track button span {
+    font-size: 11px;
+  }
+  .playback,
+  .playback > div {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .playback .icon-button,
+  .playback .play-button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+  .time-readout {
+    font-size: 11px;
+  }
+  .playback .speed-label {
+    font-size: 11px;
+  }
+  .progress-label {
+    font-size: 9px;
+  }
+  .compact-playback {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .compact-playback button {
+    min-height: 44px;
+  }
+  .compare-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .compare-columns section {
+    padding: 18px;
+  }
+  .compare-columns h2 {
+    font-size: 23px;
+  }
+  .compare-columns dt,
+  .compare-columns dd {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .compare-top {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .knowledge-grid {
+    order: 4;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .knowledge-grid > section {
+    min-width: 0;
+    padding: 20px;
+  }
+  .knowledge-grid p,
+  .knowledge-grid .answer,
+  .knowledge-grid .order-row {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .knowledge-grid .answer {
+    min-height: 48px;
+  }
+  .order-row {
+    gap: 6px;
+  }
+  .order-row > div {
+    min-width: 0;
+  }
+  .order-row button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .modal-shade {
+    padding: max(16px, env(safe-area-inset-top)) 16px
+      max(16px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+  }
+  .question-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    padding: 24px 20px;
+  }
+  .question-modal h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .question-modal .close-modal {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .shortcut-modal dl {
+    grid-template-columns: minmax(70px, 90px) minmax(0, 1fr);
+    font-size: 12px;
+    gap: 15px;
+  }
+  .app > footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 18px 16px max(18px, env(safe-area-inset-bottom));
+  }
+  footer .footer-left {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  footer .preferences {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  footer .preferences label {
+    flex: 1 1 115px;
+    min-width: 0;
+    font-size: 11px;
+  }
+  footer .preferences select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  footer .preferences .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+    align-self: flex-end;
+  }
+
+  /* Game HUDs fit phone widths; only the 3D surface captures camera gestures. */
+  .inside main[data-page="Games"] {
+    min-height: 0;
+  }
+  .games-v2 {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 16px 28px;
+  }
+  .games-v2 > *,
+  .games-v2 .cell-workspace > *,
+  .games-v2 .aftermath-workspace > * {
+    min-width: 0;
+  }
+  .games-v2 button {
+    min-height: 44px;
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 11px 13px;
+  }
+  .games-v2 select {
+    min-height: 44px;
+    font-size: 16px;
+    min-width: 0;
+  }
+  .games-topbar {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .games-topbar .game-learning-mode {
+    flex: 1 1 140px;
+    flex-wrap: wrap;
+    margin: 0;
+    font-size: 11px;
+  }
+  .game-learning-mode select {
+    width: 100%;
+  }
+  .games-topbar .sound-toggle {
+    align-self: flex-end;
+  }
+  .games-topbar > .back-to-hub {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+  .games-hub-heading h1 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.3px;
+    overflow-wrap: anywhere;
+  }
+  .games-hub-heading p,
+  .cover-description p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .expedition-covers {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cover-preview {
+    height: clamp(240px, 75vw, 330px);
+  }
+  .cover-description h2 {
+    font-size: 27px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .cover-description .game-eyebrow {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .cover-description p {
+    min-height: 0;
+  }
+  .cover-category {
+    font-size: 9px;
+    letter-spacing: 1px;
+    max-width: calc(100% - 40px);
+    line-height: 1.6;
+  }
+  .hub-footnote {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .hub-footnote p {
+    font-size: 12px;
+  }
+  .mission-strip {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mission-strip > div:first-child {
+    width: 100%;
+  }
+  .mission-strip h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .mission-strip h2 small {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .mission-strip > button {
+    flex: 1 1 auto;
+  }
+  .mission-pips {
+    width: 100%;
+    margin: 0 0 5px;
+  }
+  .mission-pips span {
+    width: 32px;
+    height: 32px;
+  }
+  .game-title-line {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .game-title-line p {
+    margin: 0;
+    font-size: 13px;
+  }
+  .games-v2 .game-viewport {
+    height: clamp(320px, 55svh, 440px);
+    width: 100%;
+    flex: none;
+    touch-action: none;
+  }
+  .games-v2 .contact-viewport {
+    height: clamp(300px, 48svh, 390px);
+  }
+  .viewport-caption {
+    padding: 12px;
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+  .control-intro {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    max-height: calc(100% - 52px);
+    overflow-y: auto;
+    padding: 16px;
+    touch-action: pan-y;
+  }
+  .control-intro p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .control-intro strong {
+    font-size: 16px;
+  }
+  .game-overlay {
+    padding: 22px;
+    overflow-y: auto;
+    touch-action: pan-y;
+  }
+  .game-overlay h2 {
+    font-size: 23px;
+    line-height: 1.4;
+  }
+  .contact-command {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .movement-pad {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 8px;
+  }
+  .movement-pad button,
+  .games-v2 .interaction-button {
+    min-height: 48px;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .contact-command .interaction-button {
+    width: 100%;
+    font-size: 14px;
+  }
+  .contact-command label {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .context-line {
+    flex-wrap: wrap;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .model-note {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .cell-workspace,
+  .aftermath-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cell-journal {
+    padding: 20px;
+  }
+  .cell-journal p {
+    font-size: 14px;
+  }
+  .cell-journal p.small-note,
+  .comparison-record,
+  .interaction-task {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .observation-list {
+    display: block;
+  }
+  .observation-list > div {
+    font-size: 13px;
+  }
+  .cell-timeline {
+    gap: 8px;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+  .cell-timeline > button {
+    flex: 1 1 auto;
+  }
+  .cell-timeline input {
+    order: 4;
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .cell-timeline label {
+    margin: 0 0 0 auto;
+    font-size: 11px;
+  }
+  .cell-timeline > span {
+    font-size: 11px;
+  }
+  .molecular-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+  .molecular-controls label {
+    display: grid;
+    grid-template-columns: 85px minmax(0, 1fr);
+    min-width: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .molecular-controls input {
+    width: 100%;
+  }
+  .molecular-label {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+  .scenario-selector {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .scenario-selector select {
+    width: 100%;
+  }
+  .population-objective {
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 10px;
+  }
+  .population-objective strong {
+    flex-basis: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .population-settings {
+    order: 2;
+    padding: 18px;
+  }
+  .population-settings fieldset {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .population-settings label {
+    font-size: 13px;
+  }
+  .population-settings p {
+    font-size: 12px;
+  }
+  .population-counters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+  .population-counters > div {
+    min-width: 0;
+    padding: 0 12px;
+  }
+  .population-counters span {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+  .population-command {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .population-command label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .population-command button {
+    width: 100%;
+  }
+  .population-end {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    max-height: calc(100% - 55px);
+    overflow-y: auto;
+    touch-action: pan-y;
+  }
+  .population-end span {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .population-end button {
+    margin: 0;
+  }
+  .ecosystem-log {
+    padding: 16px;
+  }
+  .ecosystem-log ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ecosystem-log li {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 4px 8px;
+    font-size: 12px;
+  }
+  .ecosystem-log li > span {
+    grid-column: 2;
+  }
+  .ecosystem-log time {
+    font-size: 11px;
+  }
+  .comparison-table {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+  .comparison-table table {
+    font-size: 12px;
+  }
+  .model-assumptions {
+    font-size: 12px;
+  }
+  .model-assumptions summary {
+    padding: 12px 0;
+  }
+}
+@media (max-width: 380px) {
+  header .brand {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  header .brand > span:not(.brand-symbol):not(.brand-dot) {
+    letter-spacing: 1px;
+  }
+  header .brand-symbol {
+    margin-right: 5px;
+  }
+  header .theme-toggle {
+    gap: 5px;
+    padding: 8px;
+  }
+  .home .hero-copy h1 {
+    font-size: 55px;
+  }
+  .games-topbar > .game-eyebrow {
+    flex-basis: 100%;
+    line-height: 1.7;
+  }
+}
+@media (max-width: 1024px) and (max-height: 500px) and (pointer: coarse) {
+  .games-v2 .game-viewport,
+  .games-v2 .contact-viewport {
+    height: 68svh;
+    min-height: 240px;
+  }
+  .home .scene-wrap,
+  .inside main:not([data-page="Games"]) .scene-wrap {
+    height: 75svh;
+    min-height: 280px;
+  }
+}
